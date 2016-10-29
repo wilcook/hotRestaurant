@@ -12,7 +12,43 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 
 // array to hold customer data
-var customers = [];
+var customers = [{
+	name: 'Potato',
+	phone: 5555551234,
+	email: 'potato@potato.org',
+	id: 'Potato'
+},{
+	name: 'Banana',
+	phone: 5555551234,
+	email: 'banana@potato.org',
+	id: 'Banana'
+},{
+	name: 'Orange',
+	phone: 5555551234,
+	email: "orange@potato.org",
+	id: 'Orange'
+}, {
+	name: 'Coffee',
+	phone: 5555551234,
+	email: 'coffee@potato.org',
+	id: 'Coffee'
+}, {
+	name: 'Table',
+	phone: 5555551234,
+	email: 'table@potato.org',
+	id: 'Table'
+}, {
+	name: 'Glasses',
+	phone: 5555551234,
+	email: 'glasses@potato.org',
+	id: 'Glasses'
+}, {
+	name: 'Laptop',
+	phone: 5555551234,
+	email: 'laptop@potato.org',
+	id: 'Laptop'
+}
+];
 
 
 // Routes
@@ -20,14 +56,26 @@ app.get('/', function(req, res) {
     res.send('Reserve a table.');
     });
 
-app.get('/tables', function(req, res) {
+//Grab the first five customers
+app.get('/view', function(req, res) {
 	
+for (var i = 0; i<customers.length; i++){
+	if (i < 5) {
+		//add code to add cust to table 
+		// $("#reservation").append('<h2 id="reserve">'+customers[i].id)+"</h2>" 
+		console.log("reserved: "+customers[i].id);
+	} 
+else {
+	//add code to add cust to waiting list
+	console.log("waitlisted: "+customers[i].id);
+}
+	
+
+}
 })
 
-
-for (var i = 0; i<customers.length; i++){
 	
-}
+
 
 
 
